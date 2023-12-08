@@ -1,74 +1,250 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity, ScrollView } from 'react-native'
+import React from 'react'
 
 export default function App() {
   return (
-    <View style={styles.container} >
-      <View style={styles.Top}>
-        <Text style={styles.text}>Top</Text>
+    <View style={styles.container}>
+      <View style={styles.Body}>
+            <Text style={styles.Header}>Todo List</Text>
+          <View style={styles.containerItem}>
+            <ScrollView>
+              <TouchableOpacity>
+                <View style={styles.Item}>
+                  <View style={styles.ChildItem}>
+                    <View style={styles.square}>
+                      <Text style={styles.ItemNumber}>1</Text>
+                    </View>
+                  </View>
+                  <View style={styles.ChildItemText}>
+                    <Text style={styles.ItemText}>Item1</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.Item}>
+                  <View style={styles.ChildItem}>
+                    <View style={styles.square}>
+                      <Text style={styles.ItemNumber}>2</Text>
+                    </View>
+                  </View>
+                  <View style={styles.ChildItemText}>
+                    <Text style={styles.ItemText}>Item2</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.Item}>
+                  <View style={styles.ChildItem}>
+                    <View style={styles.square}>
+                      <Text style={styles.ItemNumber}>3</Text>
+                    </View>
+                  </View>
+                  <View style={styles.ChildItemText}>
+                    <Text style={styles.ItemText}>Item3</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.Item}>
+                  <View style={styles.ChildItem}>
+                    <View style={styles.square}>
+                      <Text style={styles.ItemNumber}>3</Text>
+                    </View>
+                  </View>
+                  <View style={styles.ChildItemText}>
+                    <Text style={styles.ItemText}>Item3</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.Item}>
+                  <View style={styles.ChildItem}>
+                    <View style={styles.square}>
+                      <Text style={styles.ItemNumber}>3</Text>
+                    </View>
+                  </View>
+                  <View style={styles.ChildItemText}>
+                    <Text style={styles.ItemText}>Item3</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.Item}>
+                  <View style={styles.ChildItem}>
+                    <View style={styles.square}>
+                      <Text style={styles.ItemNumber}>3</Text>
+                    </View>
+                  </View>
+                  <View style={styles.ChildItemText}>
+                    <Text style={styles.ItemText}>Item3</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.Item}>
+                  <View style={styles.ChildItem}>
+                    <View style={styles.square}>
+                      <Text style={styles.ItemNumber}>3</Text>
+                    </View>
+                  </View>
+                  <View style={styles.ChildItemText}>
+                    <Text style={styles.ItemText}>Item3</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.Item}>
+                  <View style={styles.ChildItem}>
+                    <View style={styles.square}>
+                      <Text style={styles.ItemNumber}>3</Text>
+                    </View>
+                  </View>
+                  <View style={styles.ChildItemText}>
+                    <Text style={styles.ItemText}>Item3</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.Item}>
+                  <View style={styles.ChildItem}>
+                    <View style={styles.square}>
+                      <Text style={styles.ItemNumber}>3</Text>
+                    </View>
+                  </View>
+                  <View style={styles.ChildItemText}>
+                    <Text style={styles.ItemText}>Item3</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.Item}>
+                  <View style={styles.ChildItem}>
+                    <View style={styles.square}>
+                      <Text style={styles.ItemNumber}>3</Text>
+                    </View>
+                  </View>
+                  <View style={styles.ChildItemText}>
+                    <Text style={styles.ItemText}>Item3</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.Item}>
+                  <View style={styles.ChildItem}>
+                    <View style={styles.square}>
+                      <Text style={styles.ItemNumber}>3</Text>
+                    </View>
+                  </View>
+                  <View style={styles.ChildItemText}>
+                    <Text style={styles.ItemText}>Item3</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+            </ScrollView>
+          </View>
       </View>
       <View style={styles.Bottom}>
-        <View style={styles.BottomLeft}>
-          <Text>Bottom left</Text>
-        </View>
-        <View style={styles.BottomRight}>
-          <View style={styles.RightBottomTop}>
-            <Text>Right Bottom Top</Text>
+        <View style={styles.BottomContainer} >
+          <View style={styles.BottomItemTextInput}>
+              <TextInput style={styles.TextInput}
+              onChangeText={(text) => {
+                // Xử lý giá trị của thẻ nhập text
+              }}
+              placeholder="Nhập tên của bạn"
+              />
           </View>
-          <View style={styles.RightBottomBottom}>
-            <Text>Right Bottom Bottom</Text>
+          <View style={styles.BottomItemImg}>
+            <Image style={styles.Img} source={require('./assets/add-icon.png')} />
           </View>
         </View>
       </View>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
-  container: {
+  container:{
     flex: 1,
-    backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
+    justifyContent: 'space-between',
   },
-  text:{
-    // color: 'black',
-    // alignSelf: 'center',
-    // textAlign: 'center'
+  Body:{
+    flex: 1,
+    marginTop: 30,
+    flexDirection: 'column',
+    backgroundColor: '#FFFF99'
   },
-  Top:{
-    flex:1,
-    backgroundColor: '#F3FE7D',
-    justifyContent: 'center',
-    alignItems: 'center',
+  Header:{
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#83C3D7',
+  },
+  containerItem:{
+    flex: 1,
+    justifyContent: 'flex-start',
+    // backgroundColor: '#00CC00',
+  },
+  Item:{
+    padding: 10,
+    margin: 10,
+    flexDirection: 'row',
+    borderRadius:10,
+    backgroundColor: '#FFFFFF',
+  },
+  ChildItem:{
+    flex: 1,
+    borderWidth: 1,
+    borderColor: 'black',
+    borderRadius:10,
+    padding: 2,
+    backgroundColor: '#99FFFF',
+    alignItems: 'center'
+  },
+  ChildItemText:{
+    flex: 8,
+  },
+  ItemNumber:{
+    margin: 10,
+  },
+  ItemText:{
+    margin: 10,
   },
   Bottom:{
-    flex:1,
-    backgroundColor: '#37EB7A',
+    // flex:1,
+    // width: 'auto',
     flexDirection: 'row',
+    // alignItems: 'center',
   },
-  BottomLeft:{
+  BottomContainer:{
+    paddingHorizontal: 5,
     flex:1,
-    backgroundColor: '#37EB7A',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   },
-  BottomRight:{
-    flex:1,
-    backgroundColor: 'white',
+  BottomItemTextInput:{
+    flex: 1,
+    borderRadius: 20,
+    borderWidth: 1.5,
+    borderColor: '#0099FF',
+    backgroundColor: '#99FFFF',
+    padding: 10,
   },
-  RightBottomTop:{
-    flex:2,
-    backgroundColor: '#EA35E2',
-    justifyContent: 'center',
-    alignItems: 'center',
+  BottomItemImg:{
+    width: 40,
+    height: 40,
   },
-  RightBottomBottom:{
-    flex:1,
-    backgroundColor: '#2776AA',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-
-});
+  // TextInput:{
+  //   flex: 3,
+  //   // width: 'auto',
+  //   borderRadius: 20,
+  //   borderWidth: 1.5,
+  //   borderColor: '#0099FF',
+  //   backgroundColor: '#99FFFF',
+  //   padding: 20,
+  // },
+  Img:{
+    flex: 1,
+    width: 40,
+    height: 40,
+  }
+})
