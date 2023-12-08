@@ -1,7 +1,8 @@
-import { Text, View, TextInput, Image, ScrollView } from 'react-native'
+import { Text, View, ScrollView,KeyboardAvoidingView } from 'react-native'
 import React from 'react'
-import Task from './components/Task/index'
 import styles from './App.Style'
+import Task from './components/Task/index'
+import InputTask from './components/Form/InputTask'
 
 export default function App() {
   return (
@@ -15,21 +16,7 @@ export default function App() {
             </ScrollView>
           </View>
       </View>
-      <View style={styles.Bottom}>
-        <View style={styles.BottomContainer} >
-          <View style={styles.BottomItemTextInput}>
-              <TextInput style={styles.TextInput}
-              onChangeText={(text) => {
-                // Xử lý giá trị của thẻ nhập text
-              }}
-              placeholder="Nhập tên của bạn"
-              />
-          </View>
-          <View style={styles.BottomItemImg}>
-            <Image style={styles.Img} source={require('./assets/add-icon.png')} />
-          </View>
-        </View>
-      </View>
+        <InputTask/> 
     </View>
   )
 }
