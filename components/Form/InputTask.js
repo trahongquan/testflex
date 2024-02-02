@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { View, TextInput, Image, KeyboardAvoidingView, Platform, TouchableOpacity } from 'react-native';
 import styles from "./StyleInputTask";
 import React from 'react';
@@ -44,6 +45,27 @@ const InputTask = () => {
     // Đóng dialog khi người dùng nhấn vào nút đóng hoặc bên ngoài dialog
     setDialogVisible(false);
   };
+=======
+import { View, TextInput, Image, KeyboardAvoidingView,
+  Keyboard, Platform, TouchableOpacity } from 'react-native'
+import styles from "./StyleInputTask";
+import React, { useState } from 'react';
+
+const InputTask = (props) => {
+  const [text, settext] = useState("")
+  const addTask = () => {
+    if(text.length===0){
+      alert("Vui lòng nhập Công việc"); 
+      return false
+    } 
+    else{
+      // alert(props.onAddTask)
+      props.onAddTask(text);
+      settext("") // Set lại TextInput bằng rỗng
+      Keyboard.dismiss() // Khi add Task xong sẽ tự động tắt bàn phím
+    }
+  }
+>>>>>>> 6d570d76c788ccdf169c0125ddbf3a4eeb93faf8
   return (
     <KeyboardAvoidingView
     keyboardVerticalOffset={10}
@@ -51,10 +73,18 @@ const InputTask = () => {
     style={styles.Bottom}>
         <View style={styles.BottomContainer}>
             <View style={styles.BottomItemTextInput}>
-                <TextInput style={styles.TextInput}
+                <TextInput
+                value={text} // Dùng để set lại input bằng rỗng
+                style={styles.TextInput}
+                onChangeText={(text) => settext(text)}
                 placeholder="Aa"/>
             </View>
+<<<<<<< HEAD
             <TouchableOpacity onPress={handlePress} >
+=======
+            <TouchableOpacity
+            onPress={addTask}>
+>>>>>>> 6d570d76c788ccdf169c0125ddbf3a4eeb93faf8
               <View style={styles.BottomItemImg}>
                   <Image style={styles.Img} source={require('./../../assets/add-icon.png')} />
               </View>
